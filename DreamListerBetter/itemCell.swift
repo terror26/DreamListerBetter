@@ -10,15 +10,15 @@ import UIKit
 
 class itemCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var Price: UILabel!
+    @IBOutlet weak var Details: UILabel!
+    @IBOutlet weak var thumb: UIImageView!
+
+    func configurecell(item :Item ) {
+        title.text = item.title
+        Price.text = "\(item.price)"
+        Details.text = item.details
+        thumb.image = item.toimage?.image as?UIImage
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
